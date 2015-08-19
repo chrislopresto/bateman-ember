@@ -1,13 +1,14 @@
 <div class='bateman-ember'>
   <h2 id="title">Bateman Ember</h2>
+  <button onclick={{action 'toggleQuotes'}}>Toggle Quotes</button>
 
   {{outlet}}
 
-  {{#ember-wormhole to='placeholder-1'}}
+  {{#ember-wormhole to=placeholder1}}
     You know, the feeling that you're feeling is just what many of us call... a "feeling".
   {{/ember-wormhole}}
 
-  {{#ember-wormhole to='placeholder-2'}}
+  {{#ember-wormhole to=placeholder2}}
     What is that? Is that a chicken?
   {{/ember-wormhole}}
 </div>
