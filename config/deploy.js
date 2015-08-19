@@ -2,7 +2,6 @@ var Promise = require('ember-cli/lib/ext/promise');
 
 var VALID_DEPLOY_ENVIRONMENTS = [
   'dev',
-  'devindex',
   'prod'
 ];
 
@@ -28,12 +27,6 @@ module.exports = function(environment) {
     ENV.build.environment = 'development';
     ENV.redis.url = process.env.BATEMAN_REDIS_URL;
     ENV.redis.revisionKey = 'dev';
-    ENV.plugins = ['build', 'json-config', 'redis'];
-  }
-
-  if (environment === 'devindex') {
-    ENV.build.environment = 'devindex';
-    ENV.redis.url = process.env.BATEMAN_REDIS_URL;
     ENV.plugins = ['build', 'json-config', 'redis'];
   }
 
