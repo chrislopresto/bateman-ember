@@ -90,12 +90,12 @@ module.exports = function(deployTarget) {
   }
 
   return Promise.resolve().then(function(){
-    if (deployTarget === 'qa' || deployTarget === 'prod') {
+    if (deployTarget === 'prod') {
       if (!ENV.redis.url || ENV.redis.url === '') {
         return new Promise(function(resolve, reject){
           var exec = require('child_process').exec;
-          exec('heroku config:get REDISTOGO_URL --app ' + herokuAppName, function (error, stdout, stderr) {
-            ENV.redis.url = stdout.replace(/\n/, '').replace(/\/\/redistogo:/, '//:');
+          exec('heroku config:get REDIS_URL --app ' + herokuAppName, function (error, stdout, stderr) {
+            ENV.redis.url = stdout.replace(/\n/, '').replace(/\/\/h:/, '//:');
             resolve(ENV);
           });
         });
