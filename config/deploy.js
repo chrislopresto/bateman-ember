@@ -20,10 +20,7 @@ module.exports = function(deployTarget) {
     keyPrefix: prefix + ':index',
     filePattern: 'index.json'
   };
-  ENV.s3 = {
-    // prefix: prefix,
-    // region: 'us-east-1'
-  };
+  ENV.s3 = {};
   ENV.slack = {
     webhookURL: process.env.ELEGANT_AND_TASTEFUL_EMBER_CLI_DEPLOY_SLACK_WEBHOOK,
     didDeploy: function() {},
@@ -56,9 +53,9 @@ module.exports = function(deployTarget) {
         var message;
         var revisionKey = context.revisionData.revisionKey;
         if (revisionKey && !context.revisionData.activatedRevisionKey) {
-          message = "Deployed " + appName + " to " + process.env.DEPLOY_TARGET + " but did not activate it.\n"
-               + "Preview: http://" + domain + "?manifest_id=" + revisionKey + "\n"
-               + "Activate: `ember deploy:activate " + process.env.DEPLOY_TARGET + ' --revision='+ revisionKey + "`\n";
+          message = 'Deployed ' + appName + ' to ' + process.env.DEPLOY_TARGET + ' but did not activate it.\n' +
+               'Preview: http://' + domain + '?manifest_id=' + revisionKey + '\n' +
+               'Activate: `ember deploy:activate ' + process.env.DEPLOY_TARGET + ' --revision='+ revisionKey + '`\n';
         } else {
           message = 'Deployed and activated ' + appName + ' to ' + process.env.DEPLOY_TARGET + ' (revision ' + revisionKey + ')';
         }
@@ -68,7 +65,7 @@ module.exports = function(deployTarget) {
     ENV.slack.didActivate = function(context) {
       if (context.commandOptions.revision) {
         return function(slack){
-          var message = "Activated " + appName + " revision on " + process.env.DEPLOY_TARGET + ": " + context.revisionData.activatedRevisionKey + "\n";
+          var message = 'Activated ' + appName + ' revision on ' + process.env.DEPLOY_TARGET + ': ' + context.revisionData.activatedRevisionKey + '\n';
           return slack.notify(message);
         };
       }
@@ -92,9 +89,9 @@ module.exports = function(deployTarget) {
   return Promise.resolve().then(function(){
     if (deployTarget === 'prod') {
       if (!ENV.redis.url || ENV.redis.url === '') {
-        return new Promise(function(resolve, reject){
+        return new Promise(function(resolve/*, reject*/){
           var exec = require('child_process').exec;
-          exec('heroku config:get REDIS_URL --app ' + herokuAppName, function (error, stdout, stderr) {
+          exec('heroku config:get REDIS_URL --app ' + herokuAppName, function (error, stdout/*, stderr*/) {
             ENV.redis.url = stdout.replace(/\n/, '').replace(/\/\/h:/, '//:');
             resolve(ENV);
           });
