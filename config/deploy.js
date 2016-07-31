@@ -8,6 +8,7 @@ module.exports = function(deployTarget) {
   var ENV = {
     build: {},
     s3: {},
+    pipeline: {},
     slack: {
       webhookURL: process.env.ELEGANT_AND_TASTEFUL_EMBER_CLI_DEPLOY_SLACK_WEBHOOK
     },
@@ -24,7 +25,9 @@ module.exports = function(deployTarget) {
     // Standardize revision key for all development deploys
     ENV.redis.revisionKey = 'development';
     ENV.redis.url = process.env.BATEMAN_REDIS_URL;
-    ENV.plugins = ['build', 'json-config', 'redis'];
+    ENV.pipeline.disabled = {
+      allExcept: ['build', 'json-config', 'redis']
+    };
   }
 
   if (deployTarget === 'production') {
