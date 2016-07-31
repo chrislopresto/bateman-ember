@@ -6,19 +6,16 @@ module.exports = function(deployTarget) {
   var redisKeyPrefix = 'bateman-ember';
 
   var ENV = {
-    build: {}
-    // include other plugin configuration that applies to all deploy targets here
-  };
-
-  ENV.s3 = {}
-  ENV.slack = {
-    webhookURL: process.env.ELEGANT_AND_TASTEFUL_EMBER_CLI_DEPLOY_SLACK_WEBHOOK
-  };
-
-  ENV.redis = {
-    allowOverwrite: true,
-    keyPrefix: redisKeyPrefix + ':index',
-    filePattern: 'index.json'
+    build: {},
+    s3: {},
+    slack: {
+      webhookURL: process.env.ELEGANT_AND_TASTEFUL_EMBER_CLI_DEPLOY_SLACK_WEBHOOK
+    },
+    redis: {
+      allowOverwrite: true,
+      keyPrefix: redisKeyPrefix + ':index',
+      filePattern: 'index.json'
+    }
   };
 
   if (deployTarget === 'development') {
