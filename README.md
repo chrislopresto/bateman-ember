@@ -40,8 +40,8 @@ Make use of the many generators for code, try `ember help generate` for more det
 
 ### Deploying
 
-* `ember deploy prod --activate`
-* `ember deploy dev --activate`
+* `ember deploy production --activate`
+* `ember deploy development --activate`
 
 ## Further Reading / Useful Links
 
