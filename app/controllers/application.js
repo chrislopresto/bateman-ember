@@ -1,5 +1,4 @@
 import Ember from 'ember';
-const { get, set } = Ember;
 
 export default Ember.Controller.extend({
   placeholder1: 'placeholder-1',
@@ -7,12 +6,12 @@ export default Ember.Controller.extend({
 
   actions: {
     toggleQuotes() {
-      if (get(this, 'placeholder1')) {
-        set(this, 'placeholder1', null);
-        set(this, 'placeholder2', null);
+      if (this.get('placeholder1')) {
+        this.set('placeholder1', null);
+        this.set('placeholder2', null);
       } else {
-        set(this, 'placeholder1', 'placeholder-1');
-        set(this, 'placeholder2', 'placeholder-2');
+        this.set('placeholder1', 'placeholder-1');
+        this.set('placeholder2', 'placeholder-2');
       }
     }
   }
