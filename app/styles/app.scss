@@ -1,0 +1,30 @@
+.EmberIslandTestHarness {
+  border: dotted 2px rebeccapurple;
+  border-radius: 6px;
+  font-family: sans-serif;
+  padding: 20px;
+
+  &-placeholder {
+    border: solid 2px goldenrod;
+    margin: 40px 0;
+    min-height: 20px;
+    padding: 20px;
+    position: relative;
+
+    &::before {
+      background: goldenrod;
+      color: white;
+      content: 'Island - #' attr(id);
+      font-family: sans-serif;
+      font-size: 12px;
+      padding: 5px 10px;
+      position: absolute;
+      left: -2px;
+      top: -25px;
+    }
+  }
+}
+
+.EmberAppContent {
+  font-family: sans-serif;
+}
