@@ -7,6 +7,10 @@ module.exports = function(defaults) {
     // Add options here
     fingerprint: {
       enabled: true
+    },
+    emberHighCharts: {
+      includeHighCharts: false,
+      includeHighStock: true
     }
   });
 
