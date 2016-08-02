@@ -1,6 +1,12 @@
-# Bateman-ember
+# Islands of Richness Demo
+
+*Codename bateman. Ember side of things.*
 
 This is a proof of concept app demonstrating a simple islands of richness pattern using Rails and Ember.
+
+## Live Demo
+
+View a live demo here: [http://www.bateman.work/](http://www.bateman.work/)
 
 ## Prerequisites
 
