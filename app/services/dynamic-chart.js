@@ -8,7 +8,6 @@ export default Ember.Service.extend({
   },
 
   updateSeriesData(chartData, rangeStart, rangeEnd) {
-    console.log('updateSeriesData');
     const numPoints = this.getRandomInt(rangeStart, rangeEnd);
     return chartData.map(series => {
       return {
@@ -19,7 +18,6 @@ export default Ember.Service.extend({
   },
 
   updateSeriesCount(chartData, numSeries) {
-    console.log('setSeriesCount:', numSeries);
     const chartDataCopy = Ember.copy(chartData, true);
     return chartDataCopy.slice(0, numSeries);
   }
