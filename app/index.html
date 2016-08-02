@@ -18,15 +18,19 @@
     <div class="EmberIslandTestHarness">
       <h1>Islands of Richness</h1>
 
-      <p class="EmberIslandTestHarness-description">
-        This area in the Ember app's index.html mimics the Rails template that will host the Ember app. It contains
-        the same placeholder divs and can be used to test the Ember app functionality in isolation.
-      </p>
-      <p>
-        Note that the Ember app's index.html will not be included in the Rails app.
-      </p>
-      <div class="EmberIslandTestHarness-placeholder" id="placeholder-1"></div>
-      <div class="EmberIslandTestHarness-placeholder" id="placeholder-2"></div>
+      <div class="DemoContainer DemoContainer--rails">
+          <h2>Rails Side (Simulated)</h2>
+          <p>
+            This area in the Ember app's index.html mimics the Rails template that will host the Ember app. It contains
+            the same placeholder divs and can be used to test the Ember app functionality in isolation.
+          </p>
+          <p>
+            Note that the Ember app's index.html will not be included in the Rails app.
+          </p>
+          <div class="RailsIsland" id="placeholder-1"></div>
+          <div class="RailsIsland" id="placeholder-2"></div>
+      </div>
+
     </div>
     {{content-for "body"}}
 

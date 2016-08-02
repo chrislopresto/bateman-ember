@@ -1,22 +1,27 @@
 @import 'pods';
 
 .EmberIslandTestHarness {
-  border: dotted 2px rebeccapurple;
-  border-radius: 6px;
   font-family: sans-serif;
-  padding: 20px;
 
-  &-placeholder {
-    border: solid 2px goldenrod;
+  .DemoContainer {
+    border: dotted 2px rebeccapurple;
+    border-radius: 6px;
+    font-family: sans-serif;
+    padding: 20px;
+    margin: 20px 0;
+  }
+
+  .RailsIsland {
+    border: solid 2px #66b3ba;
     margin: 40px 0;
     min-height: 20px;
     padding: 20px;
     position: relative;
 
     &::before {
-      background: goldenrod;
+      background: #66b3ba;
       color: white;
-      content: 'Island - #' attr(id);
+      content: 'Rails Island - #' attr(id);
       font-family: sans-serif;
       font-size: 12px;
       padding: 5px 10px;
@@ -27,6 +32,6 @@
   }
 }
 
-.EmberAppContent {
+.DemoContainer--ember {
   font-family: sans-serif;
 }

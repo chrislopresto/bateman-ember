@@ -1,6 +1,13 @@
-<div class='EmberAppContent'>
-  <h2>Ember App Content</h2>
-  <button onclick={{toggle 'renderInPlace' this}}>Toggle Content</button>
+<div class='DemoContainer DemoContainer--ember'>
+  <h2>Ember Side</h2>
+
+  <ul>
+    <li>The Ember app manifest is deployed to redis</li>
+    <li>The Ember app consists of a set of island components designed to populate the placeholders in the Rails template</li>
+    <li>When the Ember app loads, the island components zap their content into the placeholders in the Rails template (matching CSS selector)</li>
+    <li>This demo provides this handy button that allows you to toggle interactive Ember content in and out of the Rails template. Go ahead. Click the button.</li>
+  </ul>
+  <button onclick={{toggle 'renderInPlace' this}}>Toggle Ember Content</button>
 
   {{outlet}}
 

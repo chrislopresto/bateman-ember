@@ -5,5 +5,6 @@ const { computed } = Ember;
 
 export default EmberWormhole.extend({
   classNames: ['EmberIsland'],
+  attributeBindings: ['to:data-to'],
   renderInPlace: computed.readOnly('archipelago.renderInPlace')
 });
