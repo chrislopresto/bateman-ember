@@ -5,7 +5,7 @@ module.exports = function(environment) {
     modulePrefix: 'bateman-ember',
     environment: environment,
     rootURL: '/',
-    locationType: 'auto',
+    locationType: 'none',
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build

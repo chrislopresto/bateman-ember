@@ -2,7 +2,7 @@
 
 module.exports = function(deployTarget) {
   var Promise = require('ember-cli/lib/ext/promise');
-  var herokuAppName = 'bateman-rails';
+  var herokuAppName = 'chrislopresto-rails';
   var redisKeyPrefix = 'bateman-ember';
 
   var ENV = {
@@ -10,7 +10,7 @@ module.exports = function(deployTarget) {
     s3: {},
     pipeline: {},
     slack: {
-      webhookURL: process.env.ELEGANT_AND_TASTEFUL_EMBER_CLI_DEPLOY_SLACK_WEBHOOK
+      webhookURL: process.env.BATEMAN_SLACK_WEBHOOK
     },
     redis: {
       allowOverwrite: true,
