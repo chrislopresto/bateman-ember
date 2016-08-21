@@ -28,7 +28,7 @@ module.exports = function(defaults) {
   // along with the exports of each module as its value.
 
   if (app.env === 'development') {
-    app.options.fingerprint.prepend = 'http://localhost:4200/';
+    app.options.fingerprint.prepend = 'http://localhost:7146/';
     app.options.fingerprint.customHash = null;
   }
 
